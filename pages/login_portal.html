@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ministry of Youth Affairs & Sports | SAI Portal</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+    /* Reset and base */
+   body, html {
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Inter, Arial, sans-serif;
+    background: url('background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #2d2d31;
+    line-height: 1.6;
+}
+
+    /* Overlay blur and container */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: rgba(240, 248, 255, 0.8);
+      backdrop-filter: blur(6px);
+      z-index: -1;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 3rem auto 2rem;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+      padding: 2.5rem 3rem 3rem;
+      box-shadow: 0 12px 36px rgba(44, 62, 80, 0.15);
+      transition: box-shadow 0.3s ease;
+    }
+
+    .container:hover {
+      box-shadow: 0 16px 64px rgba(44, 62, 80, 0.25);
+    }
+
+    .logo-wrapper {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .logo-wrapper img {
+      max-width: 210px;
+      width: 50%;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 8px 28px rgba(44, 62, 80, 0.15);
+      background: #fff;
+      padding: 8px;
+      transition: transform 0.3s ease;
+    }
+
+    .logo-wrapper img:hover {
+      transform: scale(1.1) rotate(-3deg);
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin: 0.2rem 0 0.6rem;
+      color: #1e3a8a;
+      text-align: center;
+      letter-spacing: 1px;
+      text-shadow: 0 2px 6px rgba(79, 126, 223, 0.3);
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin: 2.4rem 0 1rem;
+      color: #175bc9;
+      border-bottom: 3px solid #f36f3c;
+      display: inline-block;
+      padding-bottom: 0.3rem;
+      border-radius: 4px;
+      text-shadow: 0 1px 3px rgba(51, 81, 143, 0.4);
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #2f6f37;
+      margin-bottom: 0.4rem;
+      text-shadow: 0 1px 2px rgba(47, 111, 55, 0.25);
+    }
+
+    p {
+      font-size: 1.05rem;
+      color: #3a3a3a;
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      padding-left: 1.3rem;
+      margin: 0.8rem 0 1.2rem;
+      color: #4677a6;
+      font-size: 1rem;
+      list-style-type: disc;
+    }
+
+    ul li {
+      margin-bottom: 0.4rem;
+    }
+
+    /* Card style with hover */
+    .card {
+      background: linear-gradient(120deg, #fafffc 65%, #f2f5ff 100%);
+      border-radius: 18px;
+      box-shadow: 0 6px 22px rgba(165, 185, 224, 0.25);
+      padding: 1.5rem 2rem 1.3rem 2rem;
+      margin-bottom: 1.5rem;
+      color: #252525;
+      border: 1.5px solid #dce6fb;
+      transition: transform 0.3s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+      cursor: default;
+    }
+
+    .card:hover {
+      transform: scale(1.04) translateY(-8px);
+      box-shadow: 0 14px 44px rgba(102, 129, 224, 0.45);
+      border-color: #9db7fa;
+    }
+
+    /* Button style */
+    .btn-primary {
+      display: inline-block;
+      background: linear-gradient(90deg, #f36f3c 0%, #61befc 100%);
+      color: white;
+      font-weight: 700;
+      font-size: 1.1rem;
+      padding: 14px 44px;
+      border-radius: 12px;
+      border: none;
+      text-align: center;
+      margin: 1.3rem 0 0 0;
+      box-shadow: 0 5px 18px rgba(79, 126, 223, 0.2);
+      cursor: pointer;
+      text-decoration: none;
+      outline: none;
+      transition: transform 0.2s, box-shadow 0.3s;
+      user-select: none;
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus {
+      transform: scale(1.07) translateY(-3px);
+      box-shadow: 0 14px 34px rgba(79, 126, 223, 0.46);
+    }
+
+    /* Footer style */
+    footer {
+      margin-top: 2.8rem;
+      text-align: center;
+      font-size: 1.05rem;
+      color: #467fbf;
+      background: transparent;
+      font-weight: 600;
+    }
+
+    /* Responsive design */
+    @media (max-width: 720px) {
+      .container {
+        padding: 1.2rem 1rem 1.5rem 1.2rem;
+        margin: 2rem auto 1rem;
+      }
+
+      .logo-wrapper img {
+        max-width: 90vw;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      h2 {
+        font-size: 1.3rem;
+      }
+
+      h3 {
+        font-size: 1rem;
+      }
+
+      p,
+      ul {
+        font-size: 0.95rem;
+      }
+
+      .card {
+        padding: 1rem 1.2rem 1rem 1.2rem;
+      }
+
+      .btn-primary {
+        font-size: 0.95rem;
+        padding: 10px 26px;
+      }
+    }
+  </style>
+</head>
+
+
+
+<body>
+  <div class="container" role="main" aria-label="Ministry of Youth Affairs and Sports portal">
+    <div class="logo-wrapper">
+    <img src="logo.jpg" alt="Khel Setu Logo">
+</div>
+
+
+    <h1>Ministry of Youth Affairs & Sports</h1>
+    <p style="text-align:center; font-size:1.15rem; margin-bottom:1.5rem; color:#2874c9;">
+      Latest Updates and Initiatives
+    </p>
+
+    <!-- Khelsetu Platform -->
+    <section aria-labelledby="khelsetu-title">
+      <h2 id="khelsetu-title">Khelsetu Platform</h2>
+      <div class="card">
+        <p><strong>KhelSetu</strong> is a next-gen sports platform built to connect athletes, coaches, and selectors under one digital roof.
+          It simplifies the selection process with real-time fitness tests like push-ups, sit-ups, shuttle runs, BMI, height &
+          weight tracking.</p>
+        <p>The app ensures fair, transparent, and data-driven evaluation for every athlete. With its smart design, athletes can
+          monitor progress while selectors get instant verified results. KhelSetu bridges the gap between raw talent and opportunity,
+          making sports selection faster and more accurate.</p>
+        <ul>
+          <li>Upload training or competition videos to prove your skills beyond numbers.</li>
+          <li>Smart AI tracks your body movements with accuracy, ensuring fair performance analysis.</li>
+          <li>No need to count – push-ups, sit-ups & more are tracked automatically.</li>
+          <li>Instant data for athletes, coaches, and selectors, all in one place.</li>
+          <li>Monitor your growth, milestones, and fitness improvements step by step.</li>
+          <li>Connecting raw talent with the right stage, so hard work never goes unnoticed.</li>
+        </ul>
+        <a href="ministey_updates.html" target="_blank" class="btn-primary" aria-label="Begin your journey with the Sports Authority of India through KhelSetu">Start Your Journey</a>
+          
+      </div>
+    </section>
+
+    <!-- Ministry Initiatives -->
+    <section aria-labelledby="initiatives-title">
+      <h2 id="initiatives-title">Ministry Initiatives</h2>
+      <div class="card">
+        <h3>Khelo India Scheme</h3>
+        <p>Revolutionizing sports infrastructure at grassroots level with a focus on youth development.</p>
+      </div>
+      <div class="card">
+        <h3>Target Olympic Podium Scheme</h3>
+        <p>Identifying and supporting potential medal prospects for Olympic and Paralympic games.</p>
+      </div>
+      <div class="card">
+        <h3>National Sports Development Fund</h3>
+        <p>Providing financial assistance to outstanding sports persons in need of support.</p>
+      </div>
+    </section>
+
+    <!-- Latest Sports Updates -->
+    <section aria-labelledby="updates-title">
+      <h2 id="updates-title">Latest Sports Updates</h2>
+      <div class="card">
+        <h3>India Wins 10 Medals at Asian Championships</h3>
+        <p>Indian athletes showcased exceptional performance at the recent Asian Athletics Championships.</p>
+      </div>
+      <div class="card">
+        <h3>New Sports Policy Focuses on Grassroots Development</h3>
+        <p>The Ministry announced a new policy aiming to identify and nurture talent from rural areas.</p>
+      </div>
+      <div class="card">
+        <h3>Digital Sports Infrastructure Portal Launched</h3>
+        <p>A new portal mapping all sports facilities across India to improve accessibility.</p>
+      </div>
+      <div class="card">
+        <h3>SAI Announces Scholarship for 500 Young Athletes</h3>
+        <p>Scholarships worth ₹5 crores announced for promising athletes in Olympic disciplines.</p>
+      </div>
+    </section>
+
+    <footer>
+      &copy; 2025 Sports Authority of India | Ministry of Youth Affairs & Sports
+    </footer>
+  </div>
+</body>
+
+</html>
